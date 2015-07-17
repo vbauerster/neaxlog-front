@@ -1,0 +1,53 @@
+<html t:type="layout" title="pbxaccess login"
+      t:sidebarTitle="PBX Reporter"
+      xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd"
+      xmlns:p="tapestry:parameter">
+<head>
+	<style type="text/css">
+		body, td	{ font-family: Arial, Helvetica, sans-serif; font-size: 13px; }
+		
+		DIV.t-alert-controls { display: none; }
+	</style>
+</head>
+<br />
+
+
+	<form t:type="form" t:zone="result" t:id="loginForm" class="full-form">
+		
+		<table>
+			<tr><td colspan="2">
+				
+			<h2 id="header">	
+				The authentication is checked against LDAP
+			</h2>			
+			</td></tr>
+		    <tr>
+				<th><label t:type="label" t:for="username">LDAP alias:</label></th>
+				<td><input t:type="textfield" t:id="username" t:validate="required" /></td>	
+			</tr>
+			<tr>
+				<th><label t:type="label" t:for="password">Password:</label></th>
+				<td><input type="password" t:type="passwordfield" t:id="password" t:validate="required, minlength=8" /></td>
+			</tr>
+			
+		</table>
+	
+	 			<div class="form-submit">
+	 				<h2 id="loginline">
+					<span t:type="ajaxloader" t:trigger="loginForm" t:zone="result" />
+					&#160;
+					<input type="submit" value="Login" />
+					</h2>
+				</div>
+				
+	</form>
+	
+	<div t:type="zone" t:id="result" id="result" />
+	
+	<p:sidebar>
+        <p>
+           is a tool, which allows you to check phone calls made with your assigned pin code
+        </p>
+	</p:sidebar>
+  
+</html>

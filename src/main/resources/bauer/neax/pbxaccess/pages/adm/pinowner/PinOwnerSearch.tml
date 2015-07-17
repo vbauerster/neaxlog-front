@@ -1,0 +1,54 @@
+<html t:type="layout" title="Pin Onwer - Search" t:chosenMenu="Admin" t:chosenOption="Manage Pin Owners"
+      xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+      xmlns:p="tapestry:parameter">
+
+<head>
+<style type="text/css">
+	DIV.t-alert-controls { display: none; }
+</style>
+</head>
+
+
+
+	<h2>Search Pin Owner</h2>
+	
+	<p:topbar>
+		<a href="#" style="margin-left: 865px" t:type="pagelink" t:page="adm/pinowner/PinOwnerCreate">Create a new one</a>
+	</p:topbar>
+
+	<form t:type="form" t:zone="result" t:id="searchForm" style="margin-top: 10px">
+	
+		<table>
+			<tr>
+				<td><t:label for="query">Alias or Full Name</t:label>:</td>
+				<td style="padding: 2px"><input type="text" t:type="textfield" t:id="query" t:mixins="autocomplete" t:validate="required" /></td>
+				<td style="padding: 2px"><input type="submit" t:type="submit" value="Search" /><span t:type="ajaxloader" t:trigger="searchForm" t:zone="result" /></td>
+			</tr>
+		</table>
+		
+	</form>
+
+	<!-- Result area -->
+
+	<div t:type="zone" t:id="result" id="result">
+	<a t:type="eventlink" t:event="updateResult" t:zone="^" />
+		<t:if test="pinOwners">
+		<form t:type="form">
+		<table t:type="grid" class="grid" t:source="pinOwners" t:inPlace="true" t:exclude="mail,whAlias,whAuthCode" t:row="pinOwner" t:add="action">
+		<p:notifyCell>
+			<input t:type="checkbox" t:id="notify" value="pinOwner.notify"/>
+		</p:notifyCell>	
+		<p:eventimeCell>
+			<t:output value="pinOwner.eventime" format="literal:dd/MM/yyyy HH:mm"/>
+		</p:eventimeCell>
+		<p:actionCell>
+			<a href="#" t:type="pagelink" t:context="pinOwner.authCode" t:page="adm/pinowner/PinOwnerUpdate">Update</a>&#160; 
+			<a t:type="eventLink" t:event="Delete" t:context="pinOwner.authCode" 
+							t:mixins="Confirm" t:message="Delete ${pinOwner.authCode}=${pinOwner.alias} ?">Delete</a>
+		</p:actionCell>
+		</table>
+		</form>
+		</t:if>
+	</div>
+
+</html>

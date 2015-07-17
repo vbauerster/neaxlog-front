@@ -1,0 +1,79 @@
+<html t:type="Layout" t:title="Report: By Pin" t:chosenMenu="Reports"  t:chosenOption="By Pin Owner"
+      xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+      xmlns:p="tapestry:parameter">
+
+<head>
+	<style type="text/css">
+		#selectedZone {position: absolute; width: 265px;  margin-left: 730px; }
+		DIV.ck_slidingPanelContent {position: relative; z-index:1; padding-left: 1px; padding-right: 1px}
+		DIV.t-alert-controls { display: none; }
+		.t-tree-label a.active	{ text-decoration: none; cursor: pointer; color: black; }
+		.t-tree-label a { text-decoration: none; cursor: pointer; color: silver; }
+	</style>
+</head>
+
+
+<t:zone t:id="treeZone" id="treeZone">
+
+<table  id="ldap-top">
+<tr>
+<td><img src="${context:/static/small-globe7.gif}" /></td>
+<td>
+Showing ${level}
+<a t:type="EventLink" t:event="subLeaf" t:zone="treeZone" href="#">
+		 Level down
+</a>
+</td>
+</tr>
+</table>
+
+
+		<t:tree t:id="tree" t:model="PersonNodeModel" t:value="personNode">
+				<p:label>
+							
+								<a t:type="EventLink" t:event="leafSelected" 
+									t:zone="selectedZone" t:context="personNode.parent.alias" class="prop:personNode.parent.CssForPin" href="#">
+									${personNode.parent.cn}
+								</a>
+							
+				</p:label>
+		</t:tree>
+	
+</t:zone>
+		
+	<t:zone t:id="selectedZone" id="selectedZone">	
+	<t:chenillekit.SlidingPanel t:subject="literal:Employees included to report" t:closed="false" >
+		<table class="slider-grid">
+		
+			<tbody>
+				<tr t:type="Loop" t:source="rParam.reporters" t:value="person">
+					<td><a t:type="EventLink" t:event="leafUnSelected" t:zone="selectedZone" t:context="person.alias" href="#">${person.cn}</a></td>
+				</tr>	
+			</tbody>
+			
+	 	</table>
+	</t:chenillekit.SlidingPanel>
+	</t:zone>
+	
+	<t:form t:id="calls" autofocus="false">
+	<div style="width: 290px; margin-left: 360px">
+				<div class="form-row">
+				<t:label for="from">From:</t:label>
+				<t:chenillekit.DateTimeField t:id="from" value="rParam.from" datePattern="dd/MM/yyyy" validate="required" />
+				</div>
+				
+				<div class="form-row">
+				<t:label for="to">To:</t:label>
+				<t:chenillekit.DateTimeField t:id="to" value="rParam.till" datePattern="dd/MM/yyyy" validate="required" />
+				</div>	
+				
+				<div class="form-row">
+				<t:label for="line">Line:</t:label>
+				<t:select t:id="line" t:value="rParam.line" model="literal:1=ALL,2=SINET,3=LANDLINE"/>
+				</div>
+		<input type="submit" value="Get Report"/>
+	 </div>
+	</t:form>
+	
+
+</html>

@@ -1,0 +1,43 @@
+<html t:type="layout" t:title="Report View" 
+      xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+      xmlns:p="tapestry:parameter">
+
+<head>
+
+        <style type="text/css">  
+
+		DIV.t-alert-controls { display: none; }		
+		table.t-data-grid {margin-top: 5px}
+		table.t-data-grid tbody tr.odd	{ background-color: #f8f8f8; }
+		table.t-data-grid tbody tr:hover	{ background-color: #eeeeee; } 
+
+        </style>  
+
+</head>
+
+<p:topbar>
+
+<a t:type="EventLink" t:event="back" href="#"><img src="${context:/static/BackButton-s.png}" /></a>
+
+<span>
+Found: &#160; ${calls?.size()} &#160; records
+</span>
+
+<div class="tbright">
+<em>Export to:</em>
+<a t:type="EventLink" t:event="export" t:context="literal:application/pdf" href="#"><img src="${context:/static/pdf-s.png}" /></a>  
+<a t:type="EventLink" t:event="export" t:context="literal:application/vnd.ms-excel" href="#"><img src="${context:/static/excel-s.png}" /></a>
+</div>
+
+</p:topbar>
+	
+  <t:grid t:source="calls" t:row="callRow" t:inplace="true" t:exclude="AuthCode" t:pagerPosition="bottom" t:rowClass="evenodd.next">
+                 <p:callTimeCell>
+                     <t:output value="callRow.callTime" format="prop:callTimeFormat"/>
+                 </p:callTimeCell>              	
+                 <p:durationCell>
+                     <t:output value="callRow.duration" format="prop:duration"/>
+                 </p:durationCell>
+ </t:grid>	
+
+</html>

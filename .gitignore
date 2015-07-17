@@ -1,0 +1,12 @@
+.classpath
+.project
+.settings
+.gradle
+gradle
+gradlew
+gradlew.bat
+logs
+target
+build
+build.gradle
+pbxaccess.iml

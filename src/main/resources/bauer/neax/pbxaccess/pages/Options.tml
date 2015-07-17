@@ -1,0 +1,35 @@
+<html t:type="layout" title="pbxaccess" t:chosenMenu="Options"
+      xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+      xmlns:p="tapestry:parameter">
+
+<head>
+
+</head>
+
+
+
+	<a t:type="EventLink" t:event="showPin" t:zone="pinZone" t:disabled="notHasPin" href="#">Show my phone pins</a>
+	
+	
+	<t:zone t:id="pinZone" id="pinZone">
+	
+		<ul style="padding: 5px 10px">
+		<t:loop source="pins" value="pin">
+		 <li><strong><em>${pin}</em></strong></li>
+		</t:loop>
+		</ul>
+	
+	</t:zone>
+
+
+
+<t:form t:id="options">
+
+	<t:label for="notify">Notify about my pin usage by email:</t:label>
+	<input t:type="checkbox" t:id="notify"/>
+	<div style="margin-top: 10px">	
+	<input type="submit" value="Save"/>
+	</div>
+</t:form>
+
+</html>

@@ -1,0 +1,58 @@
+<html t:type="layout" title="Pin Onwer - Update" t:chosenMenu="Admin" t:chosenOption="Manage Pin Owners"
+      xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+      xmlns:p="tapestry:parameter">
+
+<head>
+<style type="text/css">
+	DIV.t-alert-controls { display: none; }
+</style>
+</head>
+
+
+	<h2>Update the Pin Owner</h2>
+
+<t:if test="pinOwner">
+	<form t:type="form" t:id="PinOwnerForm">
+	
+	<div class="form-row">
+	<t:label for="alias"/>:
+	<input t:type="TextField" t:id="alias" value="pinOwner.alias" t:disabled="true" size="20"/>
+	</div>
+
+	<div class="form-row">
+	<t:label for="firstName"/>:
+	<input t:type="TextField" t:id="firstName" value="pinOwner.firstName" t:validate="required,maxlength=50" size="20"/>
+	</div>
+
+	<div class="form-row">
+	<t:label for="lastName"/>:
+	<input t:type="TextField" t:id="lastName" value="pinOwner.lastName" t:validate="required,maxlength=50" size="20"/>
+	</div>
+
+	<div class="form-row">
+	<t:label for="mail"/>:
+	<input t:type="TextField" t:id="mail" value="pinOwner.mail" t:validate="required,email,maxlength=50" size="35"/>
+	</div>
+
+	<div class="form-row">
+	<t:label for="pinCode"/>:
+	<input t:type="TextField" t:id="pinCode" value="pinOwner.authCode" t:validate="required,maxlength=32" size="20"/>
+	</div>
+
+	<div class="form-row">
+	<t:label for="notify"/>:
+	<input t:type="checkbox" t:id="notify" value="pinOwner.notify"/>
+	</div>
+	
+		<div class="form-submit">
+			<input type="submit" t:type="submit" value="Save" /> or <a href="#" t:type="pageLink" t:page="adm/pinowner/PinOwnerSearch">cancel</a>
+		</div>
+	
+	</form>
+</t:if>
+
+<t:if negate="true" test="pinOwner">
+		<strong>Pin ${pin} does not exist.</strong>
+</t:if>
+	
+</html>

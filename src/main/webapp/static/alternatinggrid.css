@@ -1,0 +1,8 @@
+
+
+/* 	The following elements demonstrate one way to override Tapestry's Grid CSS.	Another way is to assign a your own CSS class in Grid's class parameter. */ img.t-sort-icon			{ vertical-align: bottom; }
+div.t-data-grid			{ font-family: Arial, Helvetica, sans-serif; }div.t-data-grid-pager a, div.t-data-grid-pager span.current	
+						{ font-size: 13px; }
+table.t-data-grid tbody tr.odd	{ background-color: #f8f8f8; }table.t-data-grid tbody tr:hover	{ background-color: #eeeeee; }table.t-data-grid th	{ width: 130px; }
+table.t-data-grid th a	{ text-decoration: none; }
+

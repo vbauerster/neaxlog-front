@@ -1,0 +1,18 @@
+<html t:type="layout" title="PBX Reporter - about" t:chosenMenu="About"
+	  t:sidebarTitle="About PBX Reporter"
+      xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+      xmlns:p="tapestry:parameter">
+
+<p>
+    The calls data are acquired from local PBX Nec Neax 2000 IPS
+    <br/>
+    Asset Tag: 536704
+</p>
+    
+    <p:sidebar>
+    Idea, Design and Programming by Vladimir Bauer
+    <img src="/pbxaccess/static/vbauer.jpg" />
+    </p:sidebar>
+    
+    
+</html>

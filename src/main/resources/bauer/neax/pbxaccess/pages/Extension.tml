@@ -1,0 +1,42 @@
+<html t:type="layout" t:title="pbxaccess" t:chosenMenu="Reports" t:chosenOption="By Extension"
+      xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+      xmlns:p="tapestry:parameter">
+
+<head>
+	<style type="text/css">
+		DIV.t-alert-controls { display: none; }
+		DIV.t-palette SELECT { width: 150px; }
+	</style>	
+</head>
+
+
+	
+	<t:form t:id="callsByExt" autofocus="false" style="margin: 10px 50px">
+	
+	<div style="float: right">
+	<t:palette t:id="selectedExts" t:selected="rParam.selectedExts" t:model="extSet" t:encoder="encoder" t:validate="required" t:disabled="extSet?.empty" />
+	</div>
+	
+	<div style="width: 300px; margin-left: 150px">
+	
+				<div class="form-row">
+				<t:label for="from">From:</t:label>
+				<t:chenillekit.DateTimeField t:id="from" value="rParam.from" datePattern="dd/MM/yyyy" validate="required" />
+				</div>
+				
+				<div class="form-row">
+				<t:label for="to">To:</t:label>
+				<t:chenillekit.DateTimeField t:id="to" value="rParam.till" datePattern="dd/MM/yyyy" validate="required" />
+				</div>
+					
+				<div class="form-row">
+				<t:label for="line">Line:</t:label>
+				<t:select t:id="line" t:value="rParam.line" model="literal:1=ALL,2=SINET,3=LANDLINE"/>
+				</div>
+								
+		<input type="submit" value="Get Report" />
+	</div>	
+	</t:form>
+	
+
+</html>

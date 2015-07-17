@@ -1,0 +1,35 @@
+<html  xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd" xmlns:p="tapestry:parameter">  
+  
+    <h1>TreeDemo</h1>  
+  
+ A demo on the Tree component. Note that Tree was introduced in Tapestry 5.3.  
+  The leafs of the tree below are links to other pages in this Tapestry application.  
+
+    <br/><br/>  
+  
+ <!--   
+    Instead of using block for parameter label,  an implemenation of RenderCommand  
+    could be used.    
+  -->  
+ <t:tree class="test-hook" t:id="tree" model="valueWrapperModel"   
+           value="valueWrapper" label="block:renderTreeNodeLabel"/>  
+  
+  <p>  
+     
+    <t:actionlink t:id="clear">clear expansions</t:actionlink>  
+      
+  </p>  
+    
+      
+   <t:block id="renderTreeNodeLabel">  
+      <t:if test="valueWrapper.leaf">  
+        <a href="#" t:type="PageLink" t:page="${valueWrapper.pageName}">  
+                  ${valueWrapper.label}</a>  
+         <p:else>  
+             <a href="#" t:type="PageLink" t:page="index"> ${valueWrapper.label}  </a>
+         </p:else>  
+     </t:if>  
+  </t:block>  
+     
+   
+</html>  

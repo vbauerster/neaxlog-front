@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+      xmlns:p="tapestry:parameter">
+
+<head>
+	<title>${title}</title>
+	<link href="${context:/static/style.css}" rel="stylesheet" type="text/css" />
+</head>
+<body id="homepage">
+	<div class="wrapper bs">
+		<ul class="nav">
+			<t:security.authenticated>
+				<li><span>Welcome ${user.cn}</span></li>
+				
+	             <li t:type="loop" t:source="pageNames" t:value="pageName" class="prop:classForPageName">
+                        <t:pagelink page="prop:pageName">${getPageValue(pageName)}</t:pagelink>
+                  </li>
+                 
+                <t:remove>  			
+				<t:security.hasRole role="admin">
+					<li>
+  						<t:pagelink page="adm/Index">Admin</t:pagelink>
+  					</li>		
+				</t:security.hasRole>
+				</t:remove>
+				
+				<li class="last">
+					<t:security.loginlink />
+				</li>
+			</t:security.authenticated>
+		</ul>
+
+	<div id="top">		
+    <table width="100%" border="0">
+        <tr>
+            <td width="130">
+            <h1>
+             <img src="${context:/static/slb_logo.gif}" alt="Schlumberger" />
+            </h1>
+            </td>
+            
+            <td class="headertxt">
+             <h1>Balkanabat's PBX Reporter Tool</h1>
+            </td>
+           
+            <td align="center" class="headertxt">
+               <h4>Turkmenistan</h4>
+            </td>
+        </tr>
+        </table>
+	</div>
+		
+	
+		<div id="alertbar">
+			<t:alerts />
+		</div>
+	
+
+			<t:if test="AdminMenu">
+				<!-- Menu style is based on an example at http://www.dynamicdrive.com/dynamicindex1/ddtabmenu.htm -->
+				<div id="menubar">
+					<ul>
+						<li t:type="Loop" t:source="admMenu.menuoptions" t:value="menuoption">
+							<a t:type="pagelink" t:page="prop:menuoption.page" class="prop:menuOptionCSSClass">
+								<span>${menuoption.label}</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div id="menubarline"/>
+			</t:if>	
+	
+			<t:if test="ReportsMenu">
+				<!-- Menu style is based on an example at http://www.dynamicdrive.com/dynamicindex1/ddtabmenu.htm -->
+				<div id="menubar">
+					<ul>
+						<li t:type="Loop" t:source="menu.menuoptions" t:value="menuoption">
+							<a t:type="pagelink" t:page="prop:menuoption.page" class="prop:menuOptionCSSClass">
+								<span>${menuoption.label}</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div id="menubarline"/>
+			</t:if>
+					
+		<div id="bar">
+			<em>
+			${topbarTitle}
+			</em>
+			<t:delegate to="topbar" />
+		</div>	
+		
+		<t:if test="sidebar">
+		<div class="col">
+			<h2 class="first">${sidebarTitle}</h2>
+			<p>
+				<t:delegate to="sidebar" />
+			</p>
+		</div>
+		</t:if>
+		
+		<div id="content" class="big-col">		
+			<t:body />
+			<div class="clearer"></div>			
+		</div>		
+		
+		<div class="clearer"></div>
+
+		<div id="footer">Supported by <a href="mailto:vbauer@slb.com?Subject=Feedback about PBX reporter">vbauer@slb.com</a></div>
+
+	</div>
+</body>
+</html>

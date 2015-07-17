@@ -1,0 +1,347 @@
+@IMPORT url("reset.css");
+/* 
+#569D2F
+#ffffff
+#333333
+#999999
+#cccccc
+#eeeeee
+*/
+
+body {  
+	color: #333333;
+	font-family: Verdana, Helvetica, sans-serif;
+	background-color: #ffffff;
+	font-size:13px;	
+}
+
+#ldap-top th
+{
+	text-align:left;
+	font-size: 14px;
+	font-weight: normal;
+	color: #039;
+	padding: 10px 8px;
+	border-bottom: 2px solid #6678b1;
+}
+#ldap-top td
+{
+	vertical-align: middle;
+	border-bottom: 1px solid #ccc;
+	color: #669;
+	
+}
+
+
+div#treeZone{
+	float: left;
+	width: 355px;
+}
+
+
+div#selected2Zone{
+	float: right;
+	width: 200px;
+}
+
+
+div.form-row {
+    padding: 4px 0 2px;
+}
+
+div.form-row label {
+    float: left;
+    width: 100px;
+	white-space: nowrap;
+}
+
+h1 { margin:10px 0px; font-family: Georgia, serif; font-size:18px; line-height:1.3em; }
+
+
+h1#header
+{	
+    color: #036;
+    font-size: 100%;
+    font-weight: normal;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: .5em;
+    padding: .4em 0;
+	margin:0px 0px;
+    border-top: 1px solid #069;
+    border-bottom: 1px solid #069;
+	background: url(bg.png) repeat-x;
+}
+
+h2#header
+{	
+    color: #036;
+    font-size: 100%;
+    font-weight: normal;
+    padding: .4em 0;
+	margin:0px 0px;
+    border-bottom: 1px solid #069;
+  
+}
+
+h2#loginline
+{	
+    color: #036;
+    font-size: 100%;
+    font-weight: normal;
+    padding: .4em 0;
+	margin:0px 0px;
+    border-top: 1px solid #069;
+  
+}
+	table.sright
+	{
+		float: right;	
+	}	
+	a.saveas
+	{
+		display: block;
+		font-size:14px;
+		font-weight: bold;
+		text-align: center;
+		background: url(saveas.gif) no-repeat;
+		width: 140px;
+		padding: 5px 0 5px 0;
+	}
+	
+h2, h3 { font-family: Georgia, serif; font-weight:normal; font-size:18px; color: #569D2F; }
+
+p { margin-bottom:10px; line-height:1.3em; }
+
+a				{ text-decoration: none; color: #3D69B6; }
+a:hover			{ text-decoration: underline; }
+
+.headertxt { VERTICAL-ALIGN: middle; }
+
+.paramform { VERTICAL-ALIGN: top; }
+
+.wrapper { width: 1024px; margin: 0 auto; padding:0px 0px; border-left:1px solid #cccccc; border-right:1px solid #cccccc; }
+.clearer { clear:both; }
+
+.nav { list-style: none; margin: 0 auto; text-align:right; height:30px; background:#1B181C url('top-bg.png') repeat-x top right; border-bottom:1px solid #999999;}
+.nav li { color:#CEC5A4; font-weight: normal; display:inline; padding:0px 5px; margin:0px; white-space: nowrap; border-right: 1px solid #ccc;  line-height:30px; }
+.nav li.last { border-right:0px;  }
+.nav a { color: #CEC5A4; text-decoration: none;}
+.nav span { color: #CEC5A4; }
+.nav a:hover {color: #ffffff;}
+.nav .current_page_item A { color: #ffffff;}
+.nav .current_page_item a {}
+
+
+.bs  {   	   box-shadow:0px 0px 20px rgba(0,0,0,0.3);
+		  -moz-box-shadow:0px 0px 20px rgba(0,0,0,0.3);
+	   -webkit-box-shadow:0px 0px 20px rgba(0,0,0,0.3); 
+}
+
+.light{ color:#999999; }
+
+.col { float:right; width: 260px; padding: 0px 10px; margin-right: 5px; margin-top:10px}
+/*.big-col { margin-right:85px !important; }*/
+
+
+#top { background: #ffffff url('bg.png') repeat-x top right; }
+#content { padding:0px 0px;  margin:0px 15px;}
+#footer { font-size:12px; color:#999999; text-align: center; padding: 15px 15px;}
+
+td#erow {padding: 5px 5px;}
+
+/* homepage */
+#homepage #aside { float:right; width: 280px; font-family: Georgia, serif; font-size:18px; font-style:italic; line-height:1.3em; vertical-align:top;}
+
+#homepage h2 { margin-bottom:10px; margin-top:20px;  }
+#homepage h2.first { margin-top: 0px; }
+#homepage h2 a , #homepage h3 a { text-decoration:none; }
+
+#features ul { list-style:none; padding:10px; padding-top:0px; }
+#features li { float:left; width:315px; margin:0px 5px;  }
+#features li h3 { margin-left:15px; font-size:21px; color: #569D2F; }
+.feature { background-color: #eeeeee; padding:15px; line-height:1.3em;}
+
+#bar {
+font-family: Georgia,serif;
+    color: #036;
+    font-size: 100%;
+    font-weight: normal;
+	white-space: nowrap; padding: 3px 3px 2px 20px; background-color:#E6E6FA;}
+#bar img{ vertical-align: middle; padding: 0px 2px 2px 2px;}
+#bar span{  width: 200px;
+  display: inline;
+  margin-left: 37%;
+  margin-right: 31%;}
+div.tbright{ display:inline;}
+
+#references { margin:10px 0px; }
+#references li { font-size: 10px; display:block; float:right; width:250px; margin:0px 10px 15px 10px; text-align:left;}
+#references img { display:block; margin-bottom:5px; padding:5px; border:1px solid #cccccc;}
+#references a { padding:0px 6px; }
+
+#tweets li { margin:10px 0px; }
+
+/* getting started */
+#getting-started h2 { color:#333333; font-size:30px; margin-bottom:15px; }
+
+#getting-started #screencasts li { clear:both; padding:5px 0px; } 
+#getting-started .thumb { float:right; margin-left:15px; }
+
+#gotodoc {clear:both; font-size:30px; background-color:#eeeeee; font-family: Georgia, serif; text-align:center; padding:15px 250px; margin:15px 0px; }
+#gotodoc a { color: #569D2F; text-decoration:none; }
+
+/* documentation */
+#documentation h2 { font-size:40px; color:#333333; }
+#breadcrumb { clear:both; font-size:18px; background-color:#eeeeee; font-family: Georgia, serif; padding:15px 30px; margin:15px 0px; }
+#breadcrumb a { color: #569D2F; text-decoration:none; }
+
+#toc a { text-decoration: none; }
+#toc > li { padding:5px 0px; }
+#toc ul a { color:#333333; }
+#toc ul { list-style: circle; margin-left:10px; padding-left:10px; }
+#breadcrumb {}
+
+/* forms */
+.form-footer { background:#C9BB9B;  border:0px; border-top:1px solid #6E6D65; padding:10px; color:#6E6D65; text-align:center; margin:0px -10px -10px -10px; border-bottom-left-radius: 10px; -moz-border-radius-bottomleft: 10px; -webkit-border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; -moz-border-radius-bottomright: 10px; -webkit-border-bottom-right-radius: 10px; }
+
+.full-form, 
+.full-form table th, .full-form table td { padding: 5px 5px;}
+.full-form table th { width: 220px; text-align:right; font-weight:normal; color: #6E6D65; }
+.full-form table th h3 { text-align:left;}
+.full-form table label {  display:block; color: #2F2F32; font-size:16px;}
+.full-form input { font-size:16px;  }
+.full-form table td input { width:200px; }
+.full-form table td.inline input { width:auto; }
+.full-form table td.inline label { display: inline; }
+.full-form .form-submit { text-align:right; width: 440px; margin-left:1px;}
+
+
+/* Ajax loading features */
+.loading { display: inline; width: auto; font-weight: bold; padding-right: 20px; background: transparent url(azone.gif) no-repeat right top;}
+
+
+
+.pd {text-align:center;}
+
+/* Workspace component */
+#workspace a {float: left; overflow: hidden; margin-right: 5px; width: 220px; text-align: left;}
+#workspace li {padding: 5px 0}
+
+/* Addnewemp form */
+.newemp		{ border-collapse: collapse; border-spacing: 0; border: 1px solid #dddddd; font-size: 13px; }
+.newemp tr		{ border-top: 1px solid #f8f8f8; }
+.newemp th		{ padding: 3px 5px; text-align: center;  border: 1px solid #dddddd; 
+					font-weight: bold; background-color: #eeeeee; }
+.newemp td		{ padding: 3px 5px; text-align:left; }
+
+
+/* Grid for slidingpanel component */
+.slider-grid			{width: 100%;}
+.slider-grid tr:hover	{ background-color: #eeeeee; }
+.slider-grid td		{ padding: 3px 5px; }
+
+/* Grid for loop component */
+.grid			{ border-collapse: collapse; border-spacing: 0; border: 1px solid #dddddd; font-size: 13px; }
+.grid tr		{ border-top: 1px solid #f8f8f8; }
+.grid tr:hover	{ background-color: #eeeeee; }
+.grid th		{ padding: 3px 5px; text-align: left; width: 130px; border: 1px solid #dddddd; 
+					font-weight: normal; background-color: #eeeeee; }
+.grid td		{ padding: 3px 5px; text-align:left; }
+
+
+/* Based on example 4 at http://www.dynamicdrive.com/dynamicindex1/ddtabmenu.htm minus the images that give rounded corners */
+#menubar			{ padding: 0; width: 100%; background-color: transparent; voice-family: "\"}\""; voice-family: inherit; }
+#menubar ul			{ font: normal 11px Arial, Verdana, sans-serif; margin:0; padding:0; list-style:none; }
+#menubar li			{ display:inline; margin:0 2px 0 0; padding:0; }
+#menubar a			{ float:left; color: white; background: silver; margin:0 2px 0 0;
+							padding:0 0 1px 3px; text-decoration:none; letter-spacing: 1px; }
+#menubar a span		{ float:none; display:block; background: transparent; padding: 6px 8px 3px 7px; }
+#menubar a:hover	{ background-color: #8cb85c; }
+#menubar a:hover span	{ background-color: #8cb85c; }
+#menubar a.chosenOption, #menubar a.chosenOption span	{ /*currently selected tab*/ background-color: #809FFF; }
+#menubarline		{ clear: both; padding: 0; width: 100%; height: 8px; line-height: 8px; background: #809FFF;
+							border-top: 1px solid #fff; /*Remove this to remove border between bar and tabs*/ }
+
+
+
+/* Tapestry overrides */
+div.t-autocomplete-menu ul                {border:1px solid #ccc; background-color:#fff; margin:0; padding:0; box-shadow:0 3px 8px rgba(0, 0, 0, 0.3);}
+div.t-autocomplete-menu ul li            {border:none; color:#000; padding:0 5px;}
+div.t-autocomplete-menu ul li.selected    {background-color:#eee; font-weight:normal;}
+
+TABLE.t-data-grid THEAD TR {
+    color: white;
+}
+
+
+TABLE.t-data-grid THEAD TR TH {
+	padding: 3px;
+    white-space: nowrap;
+    border: none;
+}
+
+TABLE.t-data-grid TH a {
+	text-decoration: none;
+	
+	font-weight: bold;
+}
+
+
+TABLE.t-data-grid {
+	border: none;
+	width: 100%;
+}
+
+TABLE.t-data-grid TBODY TR TD {
+	border: none;
+	border-top: solid 1px;
+    padding: 5px;
+}
+
+DIV.t-data-grid {
+    font-family: "Trebuchet MS", Arial, sans-serif;
+}
+
+DIV.t-data-grid-pager {
+    margin: 8px 0px;
+}
+
+DIV.t-data-grid-pager A, DIV.t-data-grid-pager SPAN.current {
+    text-decoration: none;
+    color: black;
+    padding: 2px 5px;
+    font-size: medium;
+    border: 1px solid silver;
+    margin-right: 5px;
+}
+
+DIV.t-data-grid-pager A:hover {
+    border: none;
+}
+
+DIV.t-data-grid-pager SPAN.current {
+    color: white;   
+}
+
+TABLE.t-data-grid TR TH A {
+    color: white;
+}
+
+IMG.t-sort-icon {
+    margin-left: 4px;
+	vertical-align: bottom;
+}
+
+DIV .t-checklist-row{
+ padding: 0px;
+}
+
+HTML>BODY DIV.t-error LI {
+    margin-left: 30px;
+}
+
+DIV.t-error LI {
+    margin-left: 30px;
+    list-style: square;
+}

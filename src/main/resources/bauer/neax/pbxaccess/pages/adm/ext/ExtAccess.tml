@@ -1,0 +1,40 @@
+<html t:type="layout" title="pbxaccess" t:chosenMenu="Admin" t:chosenOption="Phone Ext. Access"
+      xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+      xmlns:p="tapestry:parameter">
+
+<head>
+<style type="text/css">
+	DIV.t-alert-controls { display: none; }
+</style>
+</head>
+
+<t:form  t:id="extacl" style="width: 300px">	
+	<div class="form-row">	
+		<t:label for="extension">Extension:</t:label>
+		<t:select t:id="extension" t:model="extSet" t:zone="usersZone" t:blankLabel="Choose..." t:blankOption="Always" t:validate="required" />
+	</div>	    
+	    
+	<div class="form-row">
+		<t:label for="alias">User's alias:</t:label>
+		<input type="text" t:type="textField" t:id="alias" t:validate="required" />
+	
+		<input type="submit" value="Add"/>
+	</div>
+</t:form>  
+
+	<t:zone t:id="usersZone" id="usersZone">
+	
+	<table class="grid" t:type="grid" t:source="extAclist" t:row="extAcl" t:add="action">[Grid here]
+		<p:actionCell>
+			<a t:type="eventLink" t:event="Delete" t:context="extAcl.Alias" 
+				t:mixins="Confirm" t:message="Delete ${extAcl.Alias} from ${extension}?">Delete</a>				
+		</p:actionCell>
+		<p:eventimeCell>
+					<t:output value="extAcl.eventime" format="literal:dd/MM/yyyy HH:mm" />
+		</p:eventimeCell>
+		</table>
+		
+	</t:zone>    
+	
+
+</html>

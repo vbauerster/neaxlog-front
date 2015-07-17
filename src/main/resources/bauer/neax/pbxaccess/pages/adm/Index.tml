@@ -1,0 +1,12 @@
+<html t:type="layout" title="pbxaccess" topbartitle="Administration pages"
+      xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+      xmlns:p="tapestry:parameter">
+
+<head>
+<style type="text/css">
+	DIV.t-alert-controls { display: none; }
+</style>
+</head>
+
+
+</html>

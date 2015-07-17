@@ -1,0 +1,68 @@
+<html t:type="layout" title="Pin Onwer - Create" t:chosenMenu="Admin" t:chosenOption="Manage Pin Owners"
+      xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+      xmlns:p="tapestry:parameter">
+
+<head>
+
+<style type="text/css">
+	DIV.t-alert-controls { display: none; }
+</style>
+</head>
+
+
+	<h2>Create new pin owner</h2>
+
+
+<p:topbar>
+	<form style="margin-left: 65%" t:type="form" t:id="ldapForm" t:zone="formZone">
+	 	<t:label for="ldapQuery">Populate from LDAP:</t:label>
+		<input type="text" t:type="textField" t:id="ldapQuery" t:mixins="autocomplete" size="15" />
+		<input type="submit" value="By Alias"/>
+		<span t:type="ajaxloader" t:trigger="ldapForm" t:zone="formZone" />	
+	</form>
+</p:topbar>
+
+
+<t:zone t:id="formZone" id="formZone">
+
+<form t:type="form" t:id="PinOwnerForm">	
+
+	<div class="form-row">
+	<t:label for="alias"/>:
+	<input t:type="TextField" t:id="alias" value="pinOwner.alias" t:mixins="MultifieldAutocomplete"
+		t:fields="['firstName', 'lastName', 'mail']" t:validate="required,maxlength=32" size="20"/>
+	</div>
+
+	<div class="form-row">
+	<t:label for="firstName"/>:
+	<input t:type="TextField" t:id="firstName" value="pinOwner.firstName" t:validate="required,maxlength=50" size="20"/>
+	</div>
+
+	<div class="form-row">
+	<t:label for="lastName"/>:
+	<input t:type="TextField" t:id="lastName" value="pinOwner.lastName" t:validate="required,maxlength=50" size="20"/>
+	</div>
+
+	<div class="form-row">
+	<t:label for="mail"/>:
+	<input t:type="TextField" t:id="mail" value="pinOwner.mail" t:validate="required,email,maxlength=50" size="35"/>
+	</div>
+
+	<div class="form-row">
+	<t:label for="pinCode"/>:
+	<input t:type="TextField" t:id="pinCode" value="pinOwner.authCode" t:validate="required,maxlength=32" size="20"/>
+	</div>
+
+	<div class="form-row">
+	<t:label for="notify"/>:
+	<input t:type="checkbox" t:id="notify" value="pinOwner.notify"/>
+	</div>
+	
+	<div class="form-submit">
+		<input type="submit" t:type="submit" value="Save" /> or <a href="#" t:type="pageLink" t:page="adm/pinowner/Search">cancel</a>
+	</div>
+	
+  </form>
+</t:zone>
+	
+</html>
